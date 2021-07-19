@@ -7,12 +7,12 @@ const Post = () => {
     title: undefined,
     body: undefined,
   })
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     const { value, name } = e.target;
     setContent(prevState => ({ ...prevState, [name]: value }));
   }
   const onSubmit = async () => {
-    const { title, body } = content;
+    const { title = '', body } = content;
     await axios.post('/api/game', { title, slug: dashify(title), body });
   }
   return (

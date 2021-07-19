@@ -2,7 +2,24 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import db from '../../utils/db';
 
-const Post = (props) => {
+type Props = {
+  entry: Entry,
+}
+
+type Entry = {
+  id: string,
+  name: string,
+  shortDescription: string,
+  fullDescription: string,
+}
+
+type StaticContext = {
+  params: {
+    id: string,
+  },
+}
+
+const Post = (props: Props) => {
   const { entry } = props;
   const router = useRouter()
   if (router.isFallback) {
@@ -40,7 +57,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: StaticContext) => {
   const { id } = context.params;
   const res = await db.collection("games").where("ID", "==", id).get()
   const entry = res.docs.map(entry => entry.data());

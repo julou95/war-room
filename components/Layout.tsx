@@ -1,6 +1,12 @@
 import Header from './Header';
 
-const Layout = ({ children }) => {
+type Props = {
+  children:
+    | React.ReactChild
+    | React.ReactChild[],
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <div>
       <Header />
@@ -10,6 +16,5 @@ const Layout = ({ children }) => {
     </div>
   )
 }
-
 
 export default Layout;

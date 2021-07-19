@@ -10,6 +10,7 @@ const EditEntry = () => {
     body: undefined,
   })
 
+  // @ts-ignore
   useEffect(async () => {
     const { id } = router.query;
     if (id) {
@@ -22,15 +23,14 @@ const EditEntry = () => {
     }
   }, [router])
 
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     const { value, name } = e.target;
     setContent(prevState => ({ ...prevState, [name]: value }));
   }
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: any) => {
     const { id } = router.query
-    const { title, body } = content;
-    console.log(id, title, body);
+    const { title = '', body } = content;
     await axios.put(`/api/game/${id}`, {
       slug: dashify(title),
       title,

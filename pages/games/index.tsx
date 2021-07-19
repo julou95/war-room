@@ -1,7 +1,16 @@
 import Link from 'next/link'
 import db from '../../utils/db';
 
-const Posts = (props) => {
+type Props = {
+  entriesData: Entry[],
+}
+
+type Entry = {
+  id: string,
+  name: string,
+}
+
+const Posts = (props: Props) => {
   const { entriesData } = props;
   return (
     <div>
