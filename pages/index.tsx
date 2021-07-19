@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 const Home = () => {
   return (
     <div className={styles.content}>
-        HOLA!
+        HOLA FROM DEV!
         <Link href={'/category'}><a>Kategorien</a></Link>
         <Link href={'/games'}><a>Alle Spiele</a></Link>
     </div>
