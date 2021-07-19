@@ -9,7 +9,6 @@ type Entry = {
 }
 
 const GameCard = ({ entry }: Entry) => {
-    console.log('entry', entry)
   return (
       <Link href={`/games/${entry.id}`}>
           <a className={styles.link}>

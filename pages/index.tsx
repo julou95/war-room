@@ -18,8 +18,7 @@ export const getStaticProps = async () => {
         id: entry.id,
         ...entry.data(),
     }));
-    
-    console.log('LJ - topGamesData:', topGamesData);
+
     return {
         props: { topGamesData },
         revalidate: 10

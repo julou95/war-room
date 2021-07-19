@@ -19,7 +19,7 @@ type Game = {
     ID: string,
 }
 
-const Category = ({ games, categoryName }: Props) => {
+const Category = ({ games = [], categoryName = '' }: Props) => {
   return (
     <div>
         <BackLink href={"/category"} text={"Kategorieübersicht"} />
@@ -53,7 +53,6 @@ export const getStaticProps = async (context: StaticContext) => {
     const games = res.docs.map(entry => entry.data());
     const categories = await db.collection("categories").where("id", "==", id).get();
     const categoryName = categories.docs.map(category => category.data())[0].name;
-    console.log('games', games);
     return {
         props: {
             games,

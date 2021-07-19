@@ -28,7 +28,6 @@ type StaticContext = {
 
 const Post = (props: Props) => {
   const { entry, category } = props;
-  console.log('entry', entry)
   const router = useRouter()
   if (router.isFallback) {
     return (
