@@ -6,6 +6,7 @@
     background-color: #1d212b;
     padding: 10px;
     top: 0;
+    z-index: 1;
 }
 .headerInner {
     width: 1180px;

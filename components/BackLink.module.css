@@ -1,0 +1,22 @@
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.backLink > svg {
+  width: 0px;
+  margin-right: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.backLink:hover > svg {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.backLink:hover {
+  background-color: #ececec;
+  border-radius: 5px;
+}

@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import db from '../../utils/db';
+import BackLink from "../../components/BackLink";
 
 type Props = {
   entry: Entry,
+  category: Category,
 }
 
 type Entry = {
@@ -13,6 +15,11 @@ type Entry = {
   fullDescription: string,
 }
 
+type Category = {
+  id: string,
+  name: string,
+}
+
 type StaticContext = {
   params: {
     id: string,
@@ -20,25 +27,29 @@ type StaticContext = {
 }
 
 const Post = (props: Props) => {
-  const { entry } = props;
+  const { entry, category } = props;
+  console.log('entry', entry)
   const router = useRouter()
   if (router.isFallback) {
     return (
       <div>loading</div>
     )
   } else {
-    if (entry) {
+    if (entry.name) {
       return (
         <div>
-          <Link href='/games'>zurück</Link>
+          <BackLink text={`Zurück zu: ${category.name}`} href={`/category/${category.id}`} />
           <h1>{entry.name}</h1>
-          <h4>{entry.shortDescription}</h4>
+          <h3>{entry.shortDescription}</h3>
           <p>{entry.fullDescription}</p>
         </div>
       );
     } else {
       return (
-        <div>not found</div>
+        <div>
+          <BackLink text={`Zurück`} href={`/category`} />
+          <h1>Spiel nicht gefunden...</h1>
+        </div>
       )
     }
   }
@@ -59,17 +70,22 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: StaticContext) => {
   const { id } = context.params;
-  const res = await db.collection("games").where("ID", "==", id).get()
-  const entry = res.docs.map(entry => entry.data());
-  if (entry.length) {
+  const res = await db.collection("games").where("ID", "==", id).get();
+  const entry = res.docs.map(entry => entry.data())[0] || {};
+  if (!entry.categoryID) {
     return {
       props: {
-        entry: entry[0]
+        entry: {},
+        category: {}
       }
     }
-  } else {
-    return {
-      props: {}
+  }
+  const catRes = await db.collection("categories").where("id", "==", entry.categoryID).get();
+  const category = catRes.docs.map(categories => categories.data())[0] || {};
+  return {
+    props: {
+      entry,
+      category,
     }
   }
 }

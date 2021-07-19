@@ -14,7 +14,7 @@ const Header = () => {
           </a>
         </Link>
         <div className={styles.logoText}>
-          &lt;MicoBellum /&gt;
+          PicoBellum
         </div>
       </div>
     </div>
