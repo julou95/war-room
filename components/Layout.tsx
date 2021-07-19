@@ -1,4 +1,5 @@
 import Header from './Header';
+import styles from './Layout.module.css';
 
 type Props = {
   children:
@@ -10,7 +11,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className={styles.container}>
         {children}
       </div>
     </div>

@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Staatliches";
+  src: url("/fonts/Staatliches-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

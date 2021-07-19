@@ -1,0 +1,45 @@
+.headerContainer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #1d212b;
+    padding: 10px;
+    top: 0;
+}
+.headerInner {
+    width: 1180px;
+    display: flex;
+    align-items: center;
+    color: #f5f5f5;
+}
+
+.logo {
+    stroke: none;
+    fill: white;
+    margin-right: 20px;
+}
+
+.logoText {
+    font-size: 40px;
+    font-family: Staatliches;
+    line-height: 1;
+}
+
+@media screen and (max-width: 1200px){
+    .headerInner {
+        width: 982px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .headerInner {
+        width: 680px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .headerInner {
+        width: 100%;
+    }
+}
