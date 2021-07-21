@@ -21,3 +21,10 @@
 .backLink:hover {
   background-color: #ececec;
 }
+
+@media screen and (max-width: 700px){
+  .backLink > svg {
+    width: 20px;
+    margin-right: 5px;
+  }
+}
