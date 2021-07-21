@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import db from '../../utils/db';
 import styles from "./login.module.css";
 
 const Completion = ({}) => {
@@ -8,14 +7,7 @@ const Completion = ({}) => {
     // console.log('router', router);
 
     const submitForm = () => {
-        db.collection('users').doc().set({
-            // @ts-ignore
-            firstName: firstNameRef.current.value,
-            // @ts-ignore
-            lastName: lastNameRef.current.value,
-        }).then(res => {
-            console.log('LJ - res:', res);
-        })
+        console.log('REGISTER');
     }
   return (
       <div className={styles.loginContainer}>
