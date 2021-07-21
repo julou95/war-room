@@ -1,0 +1,72 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.email, .password, .button {
+  appearance: none;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.email, .password {
+  padding-left: 50px;
+  border-bottom: 2px solid lightgray;
+}
+
+.password {
+  border-top: none;
+}
+
+.email {
+  border-radius: 10px 10px 0 0;
+}
+
+.email:focus-visible,
+.password:focus-visible {
+  outline: none;
+  border-color: #1d212b;
+}
+
+.button {
+  margin: 20px 0 50px;
+  border-radius: 5px;
+  color: white;
+  background-color: #1d212b;
+  font-family: 'Staatliches', sans-serif;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  margin-top: 9px;
+  fill: #1d212b;
+  width: 40px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 2px solid lightgray;
+}
+
+.register:hover {
+  text-decoration: underline;
+}
+
+.error {
+  padding: 10px;
+  border: 2px solid darkred;
+  border-radius: 5px;
+  background-color: #ffcccc;
+  margin-bottom: 20px;
+}

@@ -10,7 +10,6 @@ export default async (req, res) => {
         updated: new Date().toISOString(),
       });
     } else if (req.method === 'GET') {
-      console.log('get game', id)
       const doc = await db.collection('games').doc(id).get();
       if (!doc.exists) {
         res.status(404).end();

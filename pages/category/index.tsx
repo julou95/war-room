@@ -16,10 +16,12 @@ type Category = {
 const Home = ({ categoriesData }: Categories) => {
     return (
         <div className={styles.content}>
-            <h1>Kategorien</h1>
-            {categoriesData.map(entry => (
-                <CategoryCard key={entry.id} {...entry} />
-            ))}
+            <div className={styles.container}>
+                <h1>Kategorien</h1>
+                {categoriesData.map(entry => (
+                    <CategoryCard key={entry.id} {...entry} />
+                ))}
+            </div>
         </div>
     )
 }
