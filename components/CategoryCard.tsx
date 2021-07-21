@@ -3,13 +3,13 @@ import Image from 'next/image';
 import styles from './CategoryCard.module.css';
 
 type Category = {
-  id: string,
   name: string,
+  url: string,
 }
 
 const CategoryCard = (category: Category) => {
   return (
-    <Link href={`/category/${category.id}`}>
+    <Link href={category.url}>
       <a className={styles.card}>
         <div className={styles.cardContent}>
           <h3>{category.name}</h3>

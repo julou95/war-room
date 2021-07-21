@@ -19,7 +19,7 @@ const Register = () => {
       firebase.auth().createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
           .then((res) => {
               storeUser(res.user?.email || 'anonymous');
-              router.push('/user')
+              router.push({ pathname: '/user/completion', query: { email: res.user?.email }})
           })
           .catch((e) => {
               setError(e.message);

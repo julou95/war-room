@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import db from '../../utils/db';
-import GameCard from '../../components/GameCard';
+import CategoryCard from '../../components/CategoryCard';
 import BackLink from "../../components/BackLink";
+import styles from './category.module.css';
 
 type Props = {
     games: object[],
@@ -21,12 +22,12 @@ type Game = {
 
 const Category = ({ games = [], categoryName = '' }: Props) => {
   return (
-    <div>
+    <div className={styles.container}>
         <BackLink href={"/category"} text={"Kategorieübersicht"} />
         <h1>{categoryName}</h1>
         {games.length ?
             games.map((game: any) => {
-                return <GameCard key={game.id} entry={{ name: game.name, id: game.ID }} />
+                return <CategoryCard key={game.id} url={`/games/${game.ID}`} name={game.name} />
             }) :
             <div>Keine Spiele gefunden...</div>
         }

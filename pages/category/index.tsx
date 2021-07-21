@@ -11,6 +11,7 @@ type Categories = {
 type Category = {
     id: string,
     name: string,
+    url: string,
 }
 
 const Home = ({ categoriesData }: Categories) => {
@@ -31,6 +32,7 @@ export const getStaticProps = async () => {
     const categoriesData = categories.docs.map(entry => ({
         id: entry.id,
         ...entry.data(),
+        url: `/category/${entry.id}`,
     }));
     return {
         props: { categoriesData },
