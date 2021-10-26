@@ -46,6 +46,7 @@ const Post = (props = {}) => {
   // console.log('LJ - id:', props.id, AuthUser.email);
   return (
     <div>
+      Some new Feature
         {/*<AddGameForm onSubmit={onSubmit} />*/}
     </div>
   );
