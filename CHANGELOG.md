@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [v1.0.3](https://github.com/julou95/war-room/releases/tag/v1.0.3) - 2021-10-26 14:02:43
+
+*No description*
+
+### Feature
+
+- ADD:
+  - ability to add games ([9c1e31a](https://github.com/julou95/war-room/commit/9c1e31a317dcb026c1c52e9dc560c9e580107a72)) ([#3](https://github.com/julou95/war-room/pull/3))
+
 ## [v1.0.2](https://github.com/julou95/war-room/releases/tag/v1.0.2) - 2021-10-26 13:59:36
 
 *No description*
