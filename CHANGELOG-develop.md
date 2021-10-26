@@ -1,8 +1,26 @@
 # CHANGELOG
 
+## [develop-92c2e414](https://github.com/julou95/war-room/releases/tag/develop-92c2e414) - 2021-10-26 15:51:57
+
+Automatic release from develop-92c2e414
+
+### Feature
+
+- ADD:
+  - function for adding games ([92c2e41](https://github.com/julou95/war-room/commit/92c2e4148d812f6c8343b9c039c13f40a5a87bf6)) ([#5](https://github.com/julou95/war-room/pull/5))
+
+## [main-b5050356](https://github.com/julou95/war-room/releases/tag/main-b5050356) - 2021-10-26 15:52:40
+
+Automatic release from main-b5050356
+
 ## [develop-76ff073f](https://github.com/julou95/war-room/releases/tag/develop-76ff073f) - 2021-10-26 15:48:23
 
 Automatic release from develop-76ff073f
+
+### Bug Fixes
+
+- BUILD:
+  - added changelog to release action ([76ff073](https://github.com/julou95/war-room/commit/76ff073f1c06f541683a217f1ed6193b49fd0be8)) ([#5](https://github.com/julou95/war-room/pull/5))
 
 ## [main-c47c4011](https://github.com/julou95/war-room/releases/tag/main-c47c4011) - 2021-10-26 15:38:15
 
