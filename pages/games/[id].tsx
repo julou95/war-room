@@ -58,7 +58,7 @@ export const getStaticPaths = async () => {
   const entries = await db.collection("games").get()
   const paths = entries.docs.map(entry => ({
     params: {
-      id: entry.data().ID
+      id: entry.data().id
     }
   }));
   return {
@@ -69,7 +69,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: StaticContext) => {
   const { id } = context.params;
-  const res = await db.collection("games").where("ID", "==", id).get();
+  const res = await db.collection("games").where("id", "==", id).get();
   const entry = res.docs.map(entry => entry.data())[0] || {};
   if (!entry.categoryID) {
     return {

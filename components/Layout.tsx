@@ -1,5 +1,6 @@
 import Header from './Header';
 import styles from './Layout.module.css';
+import AddGameButton from './AddGameButton';
 
 type Props = {
   children:
@@ -14,6 +15,7 @@ const Layout = ({ children }: Props) => {
       <div className={styles.container}>
         {children}
       </div>
+      <AddGameButton />
     </div>
   )
 }
