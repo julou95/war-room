@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Package build artifacts
-        run: tar -czvf microspot-frontend.tar.gz dist server package.json ecosystem.config.js
+        run: tar -czvf frontend.tar.gz .next package.json
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
