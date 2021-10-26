@@ -2,7 +2,7 @@
 
 ## [v1.0.3](https://github.com/julou95/war-room/releases/tag/v1.0.3) - 2021-10-26 14:02:43
 
-*No description*
+What if i add a description?
 
 ### Feature
 
