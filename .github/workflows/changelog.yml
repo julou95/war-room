@@ -7,13 +7,17 @@ jobs:
   generate-changelog:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Inject slug/short variables
+      uses: rlespinasse/github-slug-action@v2.x
+    - name: Checkout Code
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: BobAnkh/auto-generate-changelog@master
+    - name: Generate changelog
+      uses: BobAnkh/auto-generate-changelog@master
       with:
         REPO_NAME: 'julou95/war-room'
         ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        PATH: 'CHANGELOG.md'
-        COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
+        PATH: 'CHANGELOG-${{ env.GITHUB_REF_SLUG }}.md'
+        COMMIT_MESSAGE: 'docs(CHANGELOG-${{ env.GITHUB_REF_SLUG }}): update release notes'
         TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'

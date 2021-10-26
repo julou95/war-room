@@ -17,7 +17,7 @@ const data = {
   user: '',
 }
 
-const Post = (props) => {
+const Post = (props = {}) => {
   const AuthUser = useAuthUser();
   const [user, setUser] = useState();
   const [content, setContent] = useState({
@@ -26,11 +26,11 @@ const Post = (props) => {
   })
 
   useEffect(() => {
-    const userData = async () =>
-      await db.collection('users').where('email', '==', AuthUser.email).get();
-    userData().then(res => {
-      console.log('LJ - res:', res);
-    });
+    // const userData = async () =>
+    //   await db.collection('users').where('email', '==', AuthUser.email).get();
+    // userData().then(res => {
+    //   console.log('LJ - res:', res);
+    // });
   }, [])
 
   const onChange = (e: any) => {
@@ -43,10 +43,10 @@ const Post = (props) => {
     // await axios.post('/api/game', { title, slug: dashify(title), body });
   }
 
-  console.log('LJ - id:', props.id, AuthUser.email);
+  // console.log('LJ - id:', props.id, AuthUser.email);
   return (
     <div>
-        <AddGameForm onSubmit={onSubmit} />
+        {/*<AddGameForm onSubmit={onSubmit} />*/}
     </div>
   );
 };
