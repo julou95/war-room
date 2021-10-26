@@ -17,7 +17,7 @@ type StaticContext = {
 
 type Game = {
     name: string,
-    ID: string,
+    id: string,
 }
 
 const Category = ({ games = [], categoryName = '' }: Props) => {
@@ -27,7 +27,7 @@ const Category = ({ games = [], categoryName = '' }: Props) => {
         <h1>{categoryName}</h1>
         {games.length ?
             games.map((game: any) => {
-                return <CategoryCard key={game.id} url={`/games/${game.ID}`} name={game.name} />
+                return <CategoryCard key={game.id} url={`/games/${game.id}`} name={game.name} />
             }) :
             <div>Keine Spiele gefunden...</div>
         }
@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
     const entries = await db.collection("games").get()
     const paths = entries.docs.map(entry => ({
         params: {
-            id: entry.data().ID
+            id: entry.data().id
         }
     }));
     return {
