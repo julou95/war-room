@@ -11,15 +11,18 @@ type Categories = {
 type Category = {
     id: string,
     name: string,
+    url: string,
 }
 
 const Home = ({ categoriesData }: Categories) => {
     return (
         <div className={styles.content}>
-            <h1>Kategorien</h1>
-            {categoriesData.map(entry => (
-                <CategoryCard key={entry.id} {...entry} />
-            ))}
+            <div className={styles.container}>
+                <h1>Kategorien</h1>
+                {categoriesData.map(entry => (
+                    <CategoryCard key={entry.id} {...entry} />
+                ))}
+            </div>
         </div>
     )
 }
@@ -29,6 +32,7 @@ export const getStaticProps = async () => {
     const categoriesData = categories.docs.map(entry => ({
         id: entry.id,
         ...entry.data(),
+        url: `/category/${entry.id}`,
     }));
     return {
         props: { categoriesData },

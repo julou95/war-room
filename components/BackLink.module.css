@@ -3,6 +3,8 @@
   align-items: center;
   padding: 5px;
   transition: 0.2s ease-in-out;
+  border: 1px solid #ececec;
+  border-radius: 5px;
 }
 
 .backLink > svg {
@@ -18,5 +20,11 @@
 
 .backLink:hover {
   background-color: #ececec;
-  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px){
+  .backLink > svg {
+    width: 20px;
+    margin-right: 5px;
+  }
 }

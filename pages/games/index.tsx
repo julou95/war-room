@@ -1,6 +1,6 @@
 import db from '../../utils/db';
-import GameCard from '../../components/GameCard';
-
+import CategoryCard from '../../components/CategoryCard';
+import styles from './games.module.css';
 type Props = {
   entriesData: Entry[],
 }
@@ -8,15 +8,16 @@ type Props = {
 type Entry = {
   id: string,
   name: string,
+  url: string,
 }
 
 const Posts = (props: Props) => {
   const { entriesData } = props;
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Alle Spiele</h1>
       {entriesData.map(entry => (
-        <GameCard entry={entry} key={entry.id} />
+        <CategoryCard name={entry.name} url={entry.url} key={entry.id} />
       ))}
     </div>
   );
@@ -26,7 +27,8 @@ export const getStaticProps = async () => {
   const entries = await db.collection('games').get();
   const entriesData = entries.docs.map(entry => ({
     id: entry.id,
-    ...entry.data()
+    ...entry.data(),
+    url: `/games/${entry.id}`
   }));
   return {
     props: { entriesData },

@@ -7,12 +7,23 @@
     padding: 10px;
     top: 0;
     z-index: 1;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .headerInner {
     width: 1180px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: #f5f5f5;
+}
+
+.homeLink, .profileLink {
+    display: flex;
+    align-items: center;
+}
+
+.profileLink > div {
+    margin-right: 15px;
 }
 
 .logo {
@@ -42,5 +53,8 @@
 @media screen and (max-width: 700px){
     .headerInner {
         width: 100%;
+    }
+    .profileLink > div {
+        display: none;
     }
 }

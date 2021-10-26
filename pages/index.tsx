@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import db from '../utils/db';
 import styles from '../styles/Home.module.css';
+import CategoryCard from '../components/CategoryCard';
 
 const Home = () => {
   return (
     <div className={styles.content}>
-        HOLA!
-        <Link href={'/category'}><a>Kategorien</a></Link>
-        <Link href={'/games'}><a>Alle Spiele</a></Link>
+        <CategoryCard name={"Kategorien"} url={"/category"} />
+        <CategoryCard name={"Alle Spiele"} url={"/games"} />
     </div>
   )
 }
