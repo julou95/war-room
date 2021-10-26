@@ -69,3 +69,15 @@ jobs:
           asset_path: ./frontend.tar.gz
           asset_name: frontend.tar.gz
           asset_content_type: application/tar+gzip
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Generate changelog
+        uses: BobAnkh/auto-generate-changelog@master
+        with:
+          REPO_NAME: 'julou95/war-room'
+          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PATH: 'CHANGELOG-${{ env.GITHUB_REF_SLUG }}.md'
+          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
+          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
