@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [main-2354b231](https://github.com/julou95/war-room/releases/tag/main-2354b231) - 2022-02-09 11:19:20
+
+Automatic release from main-2354b231
+
+### Bug Fixes
+
+- general:
+  - fix cookies ([2354b23](https://github.com/julou95/war-room/commit/2354b231f75faaeb9f2c81d8d4965dc16f102547))
+
 ## [main-d7f9e1ac](https://github.com/julou95/war-room/releases/tag/main-d7f9e1ac) - 2022-02-09 11:06:38
 
 Automatic release from main-d7f9e1ac
