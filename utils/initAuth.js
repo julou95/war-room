@@ -27,8 +27,8 @@ const initAuth = () => {
 			// Keys are required unless you set `signed` to `false`.
 			// The keys cannot be accessible on the client side.
 			keys: [
-				'firebase_current',
-				'firebase_previous'
+				process.env.COOKIE_SECRET_CURRENT,
+				process.env.COOKIE_SECRET_PREVIOUS
 			],
 			httpOnly: true,
 			maxAge: 12 * 60 * 60 * 24 * 1000, // twelve days
